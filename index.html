@@ -34,54 +34,60 @@
                 <p>Let's do this!</p>
     
                 <form action="#" method="get" class="sign-up-form">
-                    <div>
+                    <div class="sign-up-form-first-name">
                         <input type="text" 
                         id="first-name" 
                         name="first-name" value="" 
                         placeholder="First Name *" 
                         pattern="^[^0-9]+$" 
                         maxlength="200" required>
-                        <label for="first-name" data-help="Take it easy!">First Name</label>
+                        <label for="first-name" 
+                        data-help="Take it easy!">First Name</label>
                     </div>
     
-                    <div>
+                    <div class="sign-up-form-last-name">
                         <input type="text" 
                         id="last-name" 
                         name="last-name" value=""
-                        placeholder="Last Name *" 
+                        placeholder="Last Name *"
+                        pattern="^[^0-9]+$" 
                         maxlength="200" required>
-                        <label for="last-name">Last Name</label>
+                        <label for="last-name"
+                        data-help="Take it easy!">Last Name</label>
                     </div>
     
-                    <div>
+                    <div class="sign-up-form-email">
                         <input type="email" 
                         id="email" 
                         name="email" 
                         value=""
                         placeholder="Email *" 
                         maxlength="100" required>
-                        <label for="email">Email</label>
+                        <label for="email" data-help="XXX@XXX.com">Email</label>
                     </div>
                     
-                    <div>
+                    <div class="sign-up-form-phone-nunber">
                         <input type="tel" id="phone-number" name="phone-number" value=""
                         placeholder="Phone Number *" 
                         maxlength="20" required>
-                        <label for="phone-number">Phone Number</label>
+                        <label for="phone-number"
+                        data-help="please enter your country code :D">Phone Number</label>
                     </div>
                     
-                    <div>
+                    <div class="sign-up-form-password">
                         <input type="password" id="password" name="password" value=""
                         placeholder="Password *" 
                         maxlength="15" required>
-                        <label for="password">Password</label>
+                        <label for="password"
+                        data-help="be careful of caps lock :D">Password</label>
                     </div>
                    
-                    <div>
+                    <div class="sign-up-form-confirm-password">
                         <input type="password" id="confirm-password" name="confirm-password" value=""
                         placeholder="Confirm Password *" 
                         maxlength="15" required>
-                        <label for="confirm-password">Confirm Password</label>
+                        <label for="confirm-password"
+                        data-help="be careful of caps lock :D">Confirm Password</label>
                     </div>
                 <div class="form-submit">
                     <div class="create-acc">

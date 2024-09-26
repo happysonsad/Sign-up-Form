@@ -14,6 +14,7 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    font-family: fantasy, Arial, sans-serif, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
   
 img, picture, video, canvas, svg {
@@ -43,9 +44,15 @@ body {
 }
 
 :root {
-    --text-color-black: #353535;
-    --text-color-white: #f4f4f4;
-    --transparent-bg-color: rgba(138, 196, 233, 0.5);
+    --color-black: #232222;
+    --color-white: #f7f7f7;
+    --color-blue: #2f8ccc;
+    --color-lightBlue: #acced9;
+    --color-invalid-red: #e3636f;
+    --transparent-invalid-red: rgba(227, 99, 111, 0.25);
+    --color-valid-green: #98a927;
+    --transparent-valid-green: rgba(152, 169, 39, 0.25);
+    --transparent-bg-color: rgba(138, 196, 233, .7);
 }
 
 .picture-section {
@@ -76,8 +83,8 @@ body {
 }
 
 .picture-footer {
-    color: var(--text-color-black);
-    font-weight: bold;
+    color: var(--color-black);
+    font-weight: bolder;
     font-style: italic;
     margin-bottom: 1rem;
 }
@@ -89,6 +96,7 @@ body {
     justify-content: flex-end;
     margin-bottom: 3rem;
 }
+
 
 .form-container {
     display: flex;
@@ -102,12 +110,197 @@ body {
 
 .disclaimer,
 .form-container > p {
-    color: var(--text-color-black);
+    color: var(--color-black);
     font-size: 1.2rem;
     font-weight: bolder;
 }
 
+
+.sign-up-form {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.form-submit,
+[class^="sign-up-form"] {
+    position: relative;
+    min-height: 1px;
+    padding: 15px;
+    width: 100%;
+    max-width: 100%;
+}
+
 .reminder-message {
-    font-weight: bold;
-    color: var(--text-color-black);
+    font-weight: bolder;
+    color: var(--color-black);
+}
+
+button, input, select {
+    font-size: 100%;
+    margin: 0;
+    max-width: 100%;
+    vertical-align: baseline;
+}
+
+input {
+    outline: none;
+}
+
+.sign-up-form input[type="text"],
+.sign-up-form input[type="email"],
+.sign-up-form input[type="tel"],
+.sign-up-form input[type="password"] {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    padding: 1.2rem 0.8rem 1rem;
+    font-size: 1.2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    padding: 1.2rem 0.8rem 1rem;
+    font-size: 1.2rem;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+:focus {
+    outline: 0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    background-color: var(--color-lightBlue);
+}
+
+/* animation */
+@keyframes silo-fade {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-1.4em);
+        -moz-transform: translateY(-1.4em);
+        -ms-transform: translateY(-1.4em);
+        -o-transform: translateY(-1.4em);
+        transform: translateY(-1.4em);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes silo-help {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Label styles */
+.sign-up-form label {
+    padding: 5px 0;
+    font-size: 14px;
+    font-size: 0.75rem;
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 26px;
+    color: var(--color-blue);
+    -webkit-animation: silo-fade 0.2s;
+    -moz-animation: silo-fade 0.2s;
+    animation: silo-fade 0.2s;
+    max-width: 80%;
+}
+
+.sign-up-form input:focus +label,
+.sign-up-form input[required]:valid + label,
+.sign-up-form input:not(:placeholder-shown) + label {
+    display: block;
+}
+
+.sign-up-form input:invalid {
+    border: 1px solid var(--color-invalid-red);
+    background-color: var(--transparent-invalid-red)
+}
+
+.sign-up-form input:invalid {
+    border-color: transparent;
+    border: 1px solid var(--color-invalid-red);
+}
+
+.sign-up-form input:invalid + label {
+    color: var(--color-invalid-red);
+}
+
+.sign-up-form input:focus:invalid + label::after {
+    content: " (" attr(data-help) ")";
+    animation: silo-help 100s;
+}
+
+.sign-up-form input:invalid + label::after {
+    content: " (" attr(data-help) ")";
+}
+
+.sign-up-form input:valid {
+    border: 1px solid var(--color-valid-green);
+    background-color: var(--transparent-valid-green);
+}
+
+.sign-up-form input:focus:valid {
+    border: 1px solid var(--color-valid-green);
+    background-color: transparent;
+}
+
+.sign-up-form input:valid +label {
+    color: var(--color-valid-green);
+}
+
+.sign-up-form input:placeholder-shown {
+    background-color: transparent;
+    border: 1px solid #a9a9a9;
+}
+
+.sign-up-form input::placeholder {
+    color: #a9a9a9;
+}
+
+.sign-up-form input:focus::placeholder {
+    background: transparent;
+}
+
+.form-submit input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid var(--color-valid-green);
+    color: var(--color-white);
+    padding: 0.5rem 0.8rem;
+    font-weight: bolder;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.form-submit input[type="submit"]:hover {
+    background-color: transparent;
+    color: var(--color-black);
+    border-radius: 10px;
+    border: var(--color-blue) 2px solid;
 }
