@@ -86,6 +86,12 @@ body {
     color: var(--color-black);
     font-weight: bolder;
     font-style: italic;
+    text-shadow: darkmagenta 2px 0 10px;;
+}
+
+.picture-footer:hover {
+    color: darkorchid;
+    text-shadow: 10px 15px;
 }
 
 .disclaimer-container {
@@ -305,3 +311,13 @@ input[type="password"]:focus {
     border-radius: 10px;
     border: var(--color-blue) 2px solid;
 }
+
+
+.reminder-message a {
+    text-decoration: none;
+}
+
+.reminder-message a:hover {
+    color: var(--color-blue);
+}
+
