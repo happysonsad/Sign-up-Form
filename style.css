@@ -45,6 +45,7 @@ body {
 
 :root {
     --color-black: #232222;
+    --color-darkgrey: #a9a9a9;
     --color-white: #f7f7f7;
     --color-blue: #2f8ccc;
     --color-lightBlue: #acced9;
@@ -52,7 +53,7 @@ body {
     --transparent-invalid-red: rgba(227, 99, 111, 0.25);
     --color-valid-green: #98a927;
     --transparent-valid-green: rgba(152, 169, 39, 0.25);
-    --transparent-bg-color: rgba(138, 196, 233, .7);
+    --transparent-bg-color-lightBlue: rgba(138, 196, 233, .5);
 }
 
 .picture-section {
@@ -65,7 +66,7 @@ body {
     height: 100vh;
     width: 80vw;
     margin: 0 auto;
-    background: var(--transparent-bg-color);
+    background: var(--transparent-bg-color-lightBlue);
 }
 
 .right-section {
@@ -78,7 +79,6 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: space-between;
     border-radius: 10px;
 }
 
@@ -86,7 +86,6 @@ body {
     color: var(--color-black);
     font-weight: bolder;
     font-style: italic;
-    margin-bottom: 1rem;
 }
 
 .disclaimer-container {
@@ -94,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -115,20 +114,22 @@ body {
     font-weight: bolder;
 }
 
+input[type] {
+    border-radius: 10px;
+}
 
 .sign-up-form {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .form-submit,
 [class^="sign-up-form"] {
     position: relative;
     min-height: 1px;
-    padding: 15px;
+    padding: 1rem;
     width: 100%;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 .reminder-message {
@@ -276,11 +277,11 @@ input[type="password"]:focus {
 
 .sign-up-form input:placeholder-shown {
     background-color: transparent;
-    border: 1px solid #a9a9a9;
+    border: 1px solid var(--color-black);
 }
 
 .sign-up-form input::placeholder {
-    color: #a9a9a9;
+    color: var(--color-darkgrey);
 }
 
 .sign-up-form input:focus::placeholder {
@@ -289,8 +290,8 @@ input[type="password"]:focus {
 
 .form-submit input[type="submit"] {
     background-color: transparent;
-    border: 1px solid var(--color-valid-green);
-    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
     padding: 0.5rem 0.8rem;
     font-weight: bolder;
     font-size: 1rem;
@@ -300,7 +301,7 @@ input[type="password"]:focus {
 
 .form-submit input[type="submit"]:hover {
     background-color: transparent;
-    color: var(--color-black);
+    color: var(--color-white);
     border-radius: 10px;
     border: var(--color-blue) 2px solid;
 }
