@@ -33,4 +33,13 @@
     isolation: isolate;
   }
 
-  
+  .picture-section {
+    background: url(/CEF59E15-2354-42C4-ACAE-8B70EFCACB35_1_105_c.jpeg) no-repeat;
+    width: 30%;
+    height: 100%;
+  }
+
+  .both-section {
+    display: flex;
+    height: 100vh;
+  }
