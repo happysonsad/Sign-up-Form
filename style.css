@@ -36,13 +36,17 @@ p, h1, h2, h3, h4, h5, h6 {
 /* basic frameworks */
 
 body {
-    background-color: #87cefa;
+    background-image: url(/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
+
 .picture-section {
-    background: url(/CEF59E15-2354-42C4-ACAE-8B70EFCACB35_1_105_c.jpeg) no-repeat;
-    flex: 1 10%;
+    flex: 1;
 }
+
 
 .both-section {
     display: flex;
@@ -52,7 +56,21 @@ body {
 }
 
 .right-section {
-    background-color: #add8e6;
+    border: 1px red solid;
     flex: 2;
 }
 
+.picture-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    border: 1px blue solid;
+}
+
+.picture-footer {
+    color: #101010;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
